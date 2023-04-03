@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             var user = CreateUser();
@@ -22,11 +23,12 @@
 
             Console.WriteLine("Есть ли у вас животные?  Только Да или Нет");
             var hasPets = GetBool();
-            if(hasPets)
+
+            if (hasPets)
             {
                 user.PetNames = GetPetNames();
             }
-            else 
+            else
             {
                 user.PetNames = new string[0];
             }
@@ -45,7 +47,6 @@
                 Console.WriteLine("Введите имя {0} питомца", i + 1);
                 names[i] = Console.ReadLine();
             }
-
             return names;
         }
 
@@ -59,7 +60,6 @@
                 Console.WriteLine("Введите {0} цвет", i + 1);
                 names[i] = Console.ReadLine();
             }
-
             return names;
         }
 
@@ -74,8 +74,8 @@
                 Console.WriteLine(message);
                 val = Console.ReadLine();
 
-            } while (! byte.TryParse(val, out result) || result == 0);
-
+            }
+            while (!byte.TryParse(val, out result) || result == 0);
             return result;
         }
 
